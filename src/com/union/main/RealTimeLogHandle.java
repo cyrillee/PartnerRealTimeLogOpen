@@ -11,7 +11,7 @@ public class RealTimeLogHandle {
 	
 	private static final String readMe = "HELP! ARGS: \n"
 			  + "args[0]: handle partner type \n"
-			  + "				    \n"
+			  + "				    1/2/3\n"
 			  + "args[1]: generate spark log ,\n"
 			  + "         0: no,  1: yes               \n"
 			  + "		   \n";
