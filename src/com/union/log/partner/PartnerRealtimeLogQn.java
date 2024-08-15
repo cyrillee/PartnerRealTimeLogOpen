@@ -17,7 +17,7 @@ public class PartnerRealtimeLogQn {
 	private static final Pattern AC_PATTERN = Pattern.compile(LOG_AC_PATTERN);
 
 	public static String handleRealtimeLog(List<String> domainList,Map<String,String> keyWordsRuleList, String logForSpark){
-		String resultMsg = "success: no files!";
+		String resultMsg = "success: no files! ";
 		String logPath = "./";
 
 		File directory = new File(logPath);
