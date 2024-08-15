@@ -89,7 +89,17 @@ public class CommUtils {
 		return String.valueOf(df.parse(dateTime).getTime()/1000);
 		
 	}
-	
+
+	public static String timeStampConvertByFormat(String seconds,String format) {
+		if(seconds == null || seconds.isEmpty() || seconds.equals("null")){
+			return "";
+		}
+		if(format == null || format.isEmpty()) format = "yyyy-MM-dd HH:mm:ss";
+		SimpleDateFormat sdf = new SimpleDateFormat(format);
+		return sdf.format(new Date(Long.valueOf(seconds+"000")));
+	}
+
+
 	public static String convertDateTimeToHour(String dateTime) throws ParseException{
 		
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
