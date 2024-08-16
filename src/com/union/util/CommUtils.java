@@ -91,7 +91,7 @@ public class CommUtils {
 	}
 
 	public static String timeStampConvertByFormat(String seconds,String format) {
-		if(seconds == null || seconds.isEmpty() || seconds.equals("null")){
+		if(seconds == null || seconds.isEmpty()){
 			return "";
 		}
 		if(format == null || format.isEmpty()) format = "yyyy-MM-dd HH:mm:ss";
