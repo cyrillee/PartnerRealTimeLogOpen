@@ -6,6 +6,7 @@ public class CdnDomain implements java.io.Serializable {
 	private Integer domainId;
 	private String domain;
 	private String dbSchemas;
+	private String supply;
 	public void setDomainId(Integer domainId) {
 		this.domainId = domainId;
 	}
@@ -22,4 +23,15 @@ public class CdnDomain implements java.io.Serializable {
 		this.dbSchemas = dbSchemas;
 	}
 
+	public Integer getDomainId() {
+		return domainId;
+	}
+
+	public String getSupply() {
+		return supply;
+	}
+
+	public void setSupply(String supply) {
+		this.supply = supply;
+	}
 }
