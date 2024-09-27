@@ -26,11 +26,9 @@ public class CdnDomain implements java.io.Serializable {
 	public Integer getDomainId() {
 		return domainId;
 	}
-
 	public String getSupply() {
 		return supply;
 	}
-
 	public void setSupply(String supply) {
 		this.supply = supply;
 	}
