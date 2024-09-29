@@ -12,8 +12,10 @@ import java.util.regex.Pattern;
 public class PartnerRealtimeLogYx {
 	
 	private static final String LOG_USMS_PATTERN = "^([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) (-|[0-9]*) (\".*?\") ([^ ]*) ([^ ]*) ([^ ]*) (\".*\") ([^ ]*)";
-	private static final String LOG_AC_PATTERN = "^(\\d{14}) ([^ ]*) ([^ ]*) ([^ ]*) \"([^\"]*)\" ([^ ]*) ([^ ]*) \"([^\"]*)\" \"([^\"]*)\" ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*)";
+	private static final String LOG_USMS_PATTERN_B = "^([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) (-|[0-9]*) (\".*?\") ([^ ]*) ([^ ]*) ([^ ]*) (\".*\") ([^ ]*)";
+	private static final String LOG_AC_PATTERN = "^(\\d{14}) ([^ ]*) ([^ ]*) ([^ ]*) \"([^\"]*)\" \"([^\"]*)\" ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*)";
 	private static final Pattern USMS_PATTERN = Pattern.compile(LOG_USMS_PATTERN);
+	private static final Pattern USMS_PATTERN_B = Pattern.compile(LOG_USMS_PATTERN_B);
 	private static final Pattern AC_PATTERN = Pattern.compile(LOG_AC_PATTERN);
 
 	public static String handleRealtimeLog(List<String> domainList,Map<String,String> keyWordsRuleList, String logForSpark){
@@ -104,13 +106,15 @@ public class PartnerRealtimeLogYx {
 	
 				String domain = "";
 				Matcher usmsLog = USMS_PATTERN.matcher(lineLog);
+				Matcher usmsLogb = USMS_PATTERN_B.matcher(lineLog);
+
 				if (usmsLog.find()) {
 					if(usmsLog.group(9).indexOf("://") < 0){		
 						continue;
 					}else{
 						domain = usmsLog.group(9).substring(usmsLog.group(9).indexOf("://") + 3,usmsLog.group(9).indexOf("/", usmsLog.group(9).indexOf("://") + 3));
 					}
-				}else{
+				}else if(usmsLogb.find()){
 					Matcher acLog = AC_PATTERN.matcher(lineLog);
 					if(acLog.find()){
 						
