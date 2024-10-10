@@ -95,7 +95,7 @@ public class PartnerRealtimeLogYx {
 			unzipFile = new File(unzipFilePathName);
 			fis = new FileInputStream(unzipFile);
 			read = new InputStreamReader(fis, "utf-8");
-			BufferedReader bufferedReader = new BufferedReader(read, 400 * 1024);
+			BufferedReader bufferedReader = new BufferedReader(read, 500 * 1024);
 	
 			String[] fileInfo = unzipFile.getName().split("_");
 			if (fileInfo.length != 2 || fileInfo[1].length() < 8) {
