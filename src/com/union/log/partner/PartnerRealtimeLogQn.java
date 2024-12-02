@@ -61,7 +61,7 @@ public class PartnerRealtimeLogQn {
 				System.out.println("--Handle plugin log file :" + fileName);				
 				String resultMsg =  LogFileSplitUtil.readLogAndSplitData(unzipFilePathName, domainList, keyWordsRuleList);
 				if(!"success".equals(resultMsg)) return resultMsg;
-				if(!"failure".equals(resultMsg)) return "";
+				if(!"failure".equals(resultMsg)) return "failure";
 			} else {
 				
 				System.out.println("--Handle access log file :" + fileName);
