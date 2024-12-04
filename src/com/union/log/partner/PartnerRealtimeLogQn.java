@@ -64,7 +64,7 @@ public class PartnerRealtimeLogQn {
 				if(!"failure".equals(resultMsg)) return "failure";
 			} else {
 				
-				System.out.println("--Handle access log file :" + fileName);
+//				System.out.println("--Handle access log file :" + fileName);
 				String resultMsg = handleQuRealtimeAccessLog(unzipFilePathName, domainList,logForSpark);
 				if(!"success".equals(resultMsg)) return resultMsg;
 			}
