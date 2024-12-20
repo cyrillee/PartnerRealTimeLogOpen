@@ -27,7 +27,7 @@ public class RealTimeLogHandle {
 			System.out.println();
 			System.out.println(CommUtils.currentlyTime() + "-- Realtime log handle start...");
 			
-			String resultMsg = "success";
+			String resultMsg = "success！！";
 			// handle log
 			if(args[0].equals("1")){
 				
